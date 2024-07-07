@@ -7,4 +7,4 @@ services:
   backend:
     build: ./set1
     ports: 
-      - 3100:5501
+      - 3100:5500
