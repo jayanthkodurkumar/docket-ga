@@ -1,0 +1,28 @@
+name: docker_compose_image_cicd
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Set up Docker Compose
+        run: docker-compose build
+
+      - name: Run docker compose
+        run: docker-compose up -d
+ 
+
+  
