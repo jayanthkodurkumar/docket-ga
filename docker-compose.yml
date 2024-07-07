@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./set2
+    ports: 
+      - 3000:3000
+  backend:
+    build: ./set1
+    ports: 
+      - 3100:5500
